@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: black;
+    color: white;
+}
+
+textarea {
+    resize: none;
+}
+
+::-webkit-scrollbar {
+    width: 0px; /* عرض شريط التمرير */
+}
+
+/* تنسيق مسار الشريط */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* لون الخلفية لمسار الشريط */
+    border-radius: 10px; /* تدوير الزوايا */
+}
+
+/* تنسيق مقبض شريط التمرير */
+::-webkit-scrollbar-thumb {
+    background: #888; /* لون المقبض */
+    border-radius: 10px; /* تدوير الزوايا */
+}
+
+/* تنسيق المقبض عند التمرير فوقه */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* لون المقبض عند التمرير عليه */
+}
