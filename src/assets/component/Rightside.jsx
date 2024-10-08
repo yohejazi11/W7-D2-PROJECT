@@ -105,10 +105,10 @@ function Rightside() {
 
             </ul>
             
-                {userName? <div className="flex items-center justify-evenly gap-x-[1rem] w-[60%]">
+                {userName? <div className="flex items-center justify-end gap-x-[1rem] w-[60%]">
                     <MdOutlineMoreHoriz></MdOutlineMoreHoriz>
-                <div>
-                    <p className="text-[20px]">{userName}</p>
+                <div className="flex items-center justify-end gap-x-[5px]">
+                    <p className="text-[16px] text-gray-500">{userName}</p>
                     <p className="text-[20px]">{Fname}</p>
                 </div>
                 <img className="h-[40px] w-[40px] rounded-[50%] bg-gray-700"></img>

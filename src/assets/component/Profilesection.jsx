@@ -52,6 +52,17 @@ function Profilesection() {
             navigate("/login")
         }
     }
+
+    
+    function deletePost(id){
+        axios
+        .delete(`https://66f0eef8f2a8bce81be7056d.mockapi.io/posts/${id}`)
+        .then(function(response){
+            console.log(response)
+            getPost()
+        })
+
+    }
     return (
         <div className="w-[40vw] h-[100vh] flex flex-col items-center gap-y-[1.5rem] border-[1px] border-black">
             <ul className="w-[100%]">
@@ -80,7 +91,8 @@ function Profilesection() {
                     {allPosts.map(item => (
                         item.userID === userID ? (
                         <div key={item.id} className="border-b-[1px] border-gray-700 py-[0.5rem]">
-                            <div className="flex h-[fit-content] justify-end gap-x-[0.5rem] items-center px-[10px]">
+                            <div className="flex h-[fit-content] w-[100%] justify-end gap-x-[0.5rem] items-center px-[10px]">
+                            {userID == item.userID?<button className="text-red-700 border-red-700 border-[2px] px-[10px] rounded-[5px] justify-self-start self-start" onClick={()=>{deletePost(item.id)}}>delete</button>:null }
                                 <p className="text-gray-500 text-[1rem] font-medium">{item.userName}</p>
                                 <p className="text-[1.2rem] font-bold">{item.name}</p>
                                 <img className="bg-slate-500 h-[40px] w-[40px] rounded-[50%]" src={item.avatarUser}></img>
